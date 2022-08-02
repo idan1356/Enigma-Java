@@ -6,28 +6,28 @@
 		</ABC>
 		<CTE-Rotors>
 			<CTE-Rotor id="1" notch="4">
-				<CTE-Positioning left="A" right="F"/>
-				<CTE-Positioning left="B" right="E"/>
-				<CTE-Positioning left="C" right="D"/>
-				<CTE-Positioning left="D" right="C"/>
-				<CTE-Positioning left="E" right="B"/>				
-				<CTE-Positioning left="F" right="A"/>				
+				<CTE-Positioning right="A" left="F"/>
+				<CTE-Positioning right="B" left="E"/>
+				<CTE-Positioning right="C" left="D"/>
+				<CTE-Positioning right="D" left="C"/>
+				<CTE-Positioning right="E" left="B"/>				
+				<CTE-Positioning right="F" left="A"/>				
 			</CTE-Rotor>
 			<CTE-Rotor id="3" notch="6">
-				<CTE-Positioning left="A" right="B"/>
-				<CTE-Positioning left="B" right="A"/>
-				<CTE-Positioning left="C" right="D"/>
-				<CTE-Positioning left="D" right="C"/>
-				<CTE-Positioning left="E" right="F"/>				
-				<CTE-Positioning left="F" right="E"/>				
+				<CTE-Positioning right="A" left="B"/>
+				<CTE-Positioning right="B" left="A"/>
+				<CTE-Positioning right="C" left="D"/>
+				<CTE-Positioning right="D" left="C"/>
+				<CTE-Positioning right="E" left="F"/>				
+				<CTE-Positioning right="F" left="E"/>				
 			</CTE-Rotor>						
 			<CTE-Rotor id="2" notch="1">
-				<CTE-Positioning left="A" right="E"/>
-				<CTE-Positioning left="B" right="B"/>
-				<CTE-Positioning left="C" right="D"/>
-				<CTE-Positioning left="D" right="F"/>
-				<CTE-Positioning left="E" right="C"/>				
-				<CTE-Positioning left="F" right="A"/>				
+				<CTE-Positioning right="A" left="E"/>
+				<CTE-Positioning right="B" left="B"/>
+				<CTE-Positioning right="C" left="D"/>
+				<CTE-Positioning right="D" left="F"/>
+				<CTE-Positioning right="E" left="C"/>				
+				<CTE-Positioning right="F" left="A"/>				
 			</CTE-Rotor>						
 		</CTE-Rotors>
 		<CTE-Reflectors>

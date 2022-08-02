@@ -2,7 +2,7 @@ package machine.enigma;
 
 import machine.generated.CTEMachine;
 
-public class Rotor implements Layer{
+public class Rotor {
     int notch;
     int offset;
     int ID;
@@ -14,12 +14,34 @@ public class Rotor implements Layer{
     }
 
     @Override
-    public char reverse() {
+    public char step() {
         return 0;
     }
 
-    @Override
-    public char step() {
-        return 0;
+    public String forward(String curChar){
+        int index = right.indexOf(curChar);
+        String out = left.get(index + offset);
+
+        if(this.next != null)
+            return this.next.forward(out);
+
+        return out;
+    }
+
+    public String backward(String curChar){
+        int index = left.indexOf(curChar);
+        return right.get(index + offset);
+    }
+
+    public void setNext(Rotor next) {
+        this.next = next;
+    }
+
+    public void setPrev(Rotor prev) {
+        this.prev = prev;
+    }
+
+    public int getID() {
+        return ID;
     }
 }
