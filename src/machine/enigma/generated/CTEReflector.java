@@ -6,7 +6,7 @@
 //
 
 
-package machine.generated;
+package machine.enigma.generated;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,6 +1,6 @@
 package menu;
 
-import machine.generated.*;
+import machine.enigma.generated.*;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
@@ -11,7 +11,7 @@ import java.io.InputStream;
 
 public class Menu {
 
-    private final static String JAXB_XML_GAME_PACKAGE_NAME = "machine.generated";
+    private final static String JAXB_XML_GAME_PACKAGE_NAME = "machine.enigma.generated";
 
     public static void main(String[] args) {
         try {
