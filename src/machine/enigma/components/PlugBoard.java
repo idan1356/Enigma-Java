@@ -1,6 +1,7 @@
 package machine.enigma.components;
 
-import java.util.Map;
+import java.util.Arrays;
+import java.util.stream.IntStream;
 
 public class PlugBoard {
     private Map<String, String> plugboard;

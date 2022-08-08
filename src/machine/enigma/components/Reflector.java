@@ -1,37 +1,29 @@
 package machine.enigma.components;
 
 import machine.enigma.generated.*;
-
-import javax.xml.bind.JAXBException;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static menu.Menu.deserializeFrom;
-
 public class Reflector {
-    Map<String,String> reflector = new HashMap<String,String>();
+    int[] reflector;
 
     public Reflector(CTEReflectors reflectors, String reflectorID, String ABC){
+        ABC = ABC.replaceAll("\\p{C}", "");
+        reflector = new int[ABC.length()];
+
+        //TODO: find a way to directly fetch index without creating list
         CTEReflector chosenReflector = reflectors.getCTEReflector().stream()
                 .filter(reflector -> Objects.equals(reflector.getId(), reflectorID))
-               .collect(Collectors.toList()).get(0);
+                .collect(Collectors.toList()).get(0);
 
-        String replaced = ABC.replaceAll("\\p{C}", "");
-        for (CTEReflect reflect : chosenReflector.getCTEReflect()) {
-            Character input = replaced.charAt(reflect.getInput() - 1);
-            Character output = replaced.charAt(reflect.getOutput() - 1);
-
-            reflector.put(input.toString(), output.toString());
-            reflector.put(output.toString(), input.toString());
-        }
+        chosenReflector.getCTEReflect().forEach(
+                reflect-> {reflector[reflect.getInput() - 1] = reflect.getOutput() - 1;
+                           reflector[reflect.getOutput() - 1] = reflect.getInput() - 1;
+                });
     }
 
-    public String forward(String curChar){
-        return reflector.get(curChar);
+    public int forward(int input){
+        return reflector[input];
     }
 
 }

@@ -17,42 +17,45 @@ public class Rotor {
 
     public Rotor(CTERotor rotor){
        notch = rotor.getNotch();
-       offset = 0;
        ID = rotor.getId();
        left = new ArrayList<>();
        right = new ArrayList<>();
 
-        for (CTEPositioning position : rotor.getCTEPositioning())
-        {
+        for (CTEPositioning position : rotor.getCTEPositioning()) {
             right.add(position.getRight());
             left.add(position.getLeft());
         }
+
+        offset = right.indexOf(String.valueOf(startPosition));
     }
 
     public void step() {
         offset = (offset + 1) % left.size();
-        if(offset == notch && next != null)
+
+        if(offset == notch - 1 && next != null)
             next.step();
     }
 
-    public String forward(String curChar){
-        int index = right.indexOf(curChar);
-        String out = left.get(index + offset);
+    public int forward(int input){
+        int index = (input + offset) % left.size();
+        String curChar = right.get(index);
+        int leftInd = Math.floorMod(left.indexOf(curChar) - offset, left.size());
 
         if(this.next != null)
-            return this.next.forward(out);
+            return this.next.forward(leftInd);
 
-        return out;
+        return leftInd;
     }
 
-    public String backward(String curChar){
-        int index = left.indexOf(curChar);
-        String out = right.get(index - offset);
+    public int backward(int input){
+        int index = Math.floorMod(input + offset, left.size());
+        String curChar = left.get(index);
+        int rightInd = Math.floorMod(right.indexOf(curChar) - offset, right.size());
 
         if(this.prev != null)
-            return this.prev.backward(out);
+            return this.prev.backward(rightInd);
 
-        return out;
+        return rightInd;
     }
 
     public void setNext(Rotor next) {
@@ -61,9 +64,5 @@ public class Rotor {
 
     public void setPrev(Rotor prev) {
         this.prev = prev;
-    }
-
-    public int getID() {
-        return ID;
     }
 }
