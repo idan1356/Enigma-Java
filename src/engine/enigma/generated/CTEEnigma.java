@@ -6,7 +6,7 @@
 //
 
 
-package machine.enigma.generated;
+package engine.enigma.generated;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

@@ -6,7 +6,7 @@
 //
 
 
-package machine.enigma.generated;
+package engine.enigma.generated;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,10 +28,19 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence maxOccurs="unbounded">
- *         &lt;element ref="{}CTE-Positioning"/>
+ *         &lt;element ref="{}CTE-Reflect"/>
  *       &lt;/sequence>
- *       &lt;attribute name="notch" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
- *       &lt;attribute name="id" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       &lt;attribute name="id" use="required">
+ *         &lt;simpleType>
+ *           &lt;restriction base="{http://www.w3.org/2001/XMLSchema}string">
+ *             &lt;enumeration value="I"/>
+ *             &lt;enumeration value="II"/>
+ *             &lt;enumeration value="III"/>
+ *             &lt;enumeration value="IV"/>
+ *             &lt;enumeration value="V"/>
+ *           &lt;/restriction>
+ *         &lt;/simpleType>
+ *       &lt;/attribute>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -41,76 +50,66 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "ctePositioning"
+    "cteReflect"
 })
-@XmlRootElement(name = "CTE-Rotor")
-public class CTERotor {
+@XmlRootElement(name = "CTE-Reflector")
+public class CTEReflector {
 
-    @XmlElement(name = "CTE-Positioning", required = true)
-    protected List<CTEPositioning> ctePositioning;
-    @XmlAttribute(name = "notch", required = true)
-    protected int notch;
+    @XmlElement(name = "CTE-Reflect", required = true)
+    protected List<CTEReflect> cteReflect;
     @XmlAttribute(name = "id", required = true)
-    protected int id;
+    protected String id;
 
     /**
-     * Gets the value of the ctePositioning property.
+     * Gets the value of the cteReflect property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the ctePositioning property.
+     * This is why there is not a <CODE>set</CODE> method for the cteReflect property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getCTEPositioning().add(newItem);
+     *    getCTEReflect().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link CTEPositioning }
+     * {@link CTEReflect }
      * 
      * 
      */
-    public List<CTEPositioning> getCTEPositioning() {
-        if (ctePositioning == null) {
-            ctePositioning = new ArrayList<CTEPositioning>();
+    public List<CTEReflect> getCTEReflect() {
+        if (cteReflect == null) {
+            cteReflect = new ArrayList<CTEReflect>();
         }
-        return this.ctePositioning;
-    }
-
-    /**
-     * Gets the value of the notch property.
-     * 
-     */
-    public int getNotch() {
-        return notch;
-    }
-
-    /**
-     * Sets the value of the notch property.
-     * 
-     */
-    public void setNotch(int value) {
-        this.notch = value;
+        return this.cteReflect;
     }
 
     /**
      * Gets the value of the id property.
      * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
      */
-    public int getId() {
+    public String getId() {
         return id;
     }
 
     /**
      * Sets the value of the id property.
      * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
      */
-    public void setId(int value) {
+    public void setId(String value) {
         this.id = value;
     }
 

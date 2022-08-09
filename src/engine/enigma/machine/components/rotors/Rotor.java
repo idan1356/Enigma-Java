@@ -1,7 +1,7 @@
-package machine.enigma.components;
+package engine.enigma.machine.components.rotors;
 
-import machine.enigma.generated.CTEPositioning;
-import machine.enigma.generated.CTERotor;
+import engine.enigma.generated.CTEPositioning;
+import engine.enigma.generated.CTERotor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +15,7 @@ public class Rotor {
     Rotor next;
     Rotor prev;
 
-    public Rotor(CTERotor rotor){
+    public Rotor(CTERotor rotor , char startPosition){
        notch = rotor.getNotch();
        ID = rotor.getId();
        left = new ArrayList<>();

@@ -6,12 +6,13 @@
 //
 
 
-package machine.enigma.generated;
+package engine.enigma.generated;
 
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
@@ -27,8 +28,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence maxOccurs="unbounded">
- *         &lt;element ref="{}CTE-Rotor"/>
+ *         &lt;element ref="{}CTE-Positioning"/>
  *       &lt;/sequence>
+ *       &lt;attribute name="notch" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
+ *       &lt;attribute name="id" use="required" type="{http://www.w3.org/2001/XMLSchema}int" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
@@ -38,41 +41,77 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "cteRotor"
+    "ctePositioning"
 })
-@XmlRootElement(name = "CTE-Rotors")
-public class CTERotors {
+@XmlRootElement(name = "CTE-Rotor")
+public class CTERotor {
 
-    @XmlElement(name = "CTE-Rotor", required = true)
-    protected List<CTERotor> cteRotor;
+    @XmlElement(name = "CTE-Positioning", required = true)
+    protected List<CTEPositioning> ctePositioning;
+    @XmlAttribute(name = "notch", required = true)
+    protected int notch;
+    @XmlAttribute(name = "id", required = true)
+    protected int id;
 
     /**
-     * Gets the value of the cteRotor property.
+     * Gets the value of the ctePositioning property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cteRotor property.
+     * This is why there is not a <CODE>set</CODE> method for the ctePositioning property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getCTERotor().add(newItem);
+     *    getCTEPositioning().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link CTERotor }
+     * {@link CTEPositioning }
      * 
      * 
      */
-    public List<CTERotor> getCTERotor() {
-        if (cteRotor == null) {
-            cteRotor = new ArrayList<CTERotor>();
+    public List<CTEPositioning> getCTEPositioning() {
+        if (ctePositioning == null) {
+            ctePositioning = new ArrayList<CTEPositioning>();
         }
-        return this.cteRotor;
+        return this.ctePositioning;
+    }
+
+    /**
+     * Gets the value of the notch property.
+     * 
+     */
+    public int getNotch() {
+        return notch;
+    }
+
+    /**
+     * Sets the value of the notch property.
+     * 
+     */
+    public void setNotch(int value) {
+        this.notch = value;
+    }
+
+    /**
+     * Gets the value of the id property.
+     * 
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * Sets the value of the id property.
+     * 
+     */
+    public void setId(int value) {
+        this.id = value;
     }
 
 }

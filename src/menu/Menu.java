@@ -1,6 +1,7 @@
 package menu;
 
-import machine.enigma.generated.*;
+import engine.enigma.generated.CTEEnigma;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
@@ -11,14 +12,13 @@ import java.io.InputStream;
 
 public class Menu {
 
-    private final static String JAXB_XML_GAME_PACKAGE_NAME = "machine.enigma.generated";
+    private final static String JAXB_XML_GAME_PACKAGE_NAME = "engine.enigma.generated";
 
     public static void main(String[] args) {
         try {
             InputStream inputStream = new FileInputStream(new File("C:\\Users\\idan1\\IdeaProjects\\Enigma EXC1\\src\\resources\\ex1-sanity-small.xml"));
             CTEEnigma enigma123 = deserializeFrom(inputStream);
             System.out.println(enigma123);
-            //  System.out.println("name of first country is: " + enigma.getCountry().get(0).getName());
         } catch (JAXBException | FileNotFoundException e) {
             e.printStackTrace();
         }

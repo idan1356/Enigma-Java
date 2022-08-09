@@ -1,6 +1,7 @@
-package machine.enigma.components;
+package engine.enigma.machine.components;
 
-import machine.enigma.generated.*;
+import engine.enigma.generated.CTEReflector;
+import engine.enigma.generated.CTEReflectors;
 import java.util.*;
 import java.util.stream.Collectors;
 
