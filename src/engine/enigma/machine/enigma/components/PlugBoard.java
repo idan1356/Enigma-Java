@@ -1,4 +1,4 @@
-package engine.enigma.machine.components;
+package engine.enigma.machine.enigma.components;
 
 import java.util.Arrays;
 import java.util.stream.IntStream;

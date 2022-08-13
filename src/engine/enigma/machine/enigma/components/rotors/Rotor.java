@@ -1,4 +1,4 @@
-package engine.enigma.machine.components.rotors;
+package engine.enigma.machine.enigma.components.rotors;
 
 import engine.enigma.generated.CTEPositioning;
 import engine.enigma.generated.CTERotor;
@@ -15,17 +15,20 @@ public class Rotor {
     Rotor next;
     Rotor prev;
 
-    public Rotor(CTERotor rotor , char startPosition){
-       notch = rotor.getNotch();
-       ID = rotor.getId();
-       left = new ArrayList<>();
-       right = new ArrayList<>();
+    public Rotor(CTERotor rotor){
+        notch = rotor.getNotch();
+        ID = rotor.getId();
+        left = new ArrayList<>();
+        right = new ArrayList<>();
+        offset = 0;
 
         for (CTEPositioning position : rotor.getCTEPositioning()) {
             right.add(position.getRight());
             left.add(position.getLeft());
         }
+    }
 
+    public void setPosition(char startPosition){
         offset = right.indexOf(String.valueOf(startPosition));
     }
 
@@ -41,8 +44,8 @@ public class Rotor {
         String curChar = right.get(index);
         int leftInd = Math.floorMod(left.indexOf(curChar) - offset, left.size());
 
-        if(this.next != null)
-            return this.next.forward(leftInd);
+        if(next != null)
+            return next.forward(leftInd);
 
         return leftInd;
     }
@@ -52,8 +55,8 @@ public class Rotor {
         String curChar = left.get(index);
         int rightInd = Math.floorMod(right.indexOf(curChar) - offset, right.size());
 
-        if(this.prev != null)
-            return this.prev.backward(rightInd);
+        if(prev != null)
+            return prev.backward(rightInd);
 
         return rightInd;
     }
