@@ -1,8 +1,5 @@
 package engine.enigma.machine.enigma_settings;
 
-import engine.enigma.generated.CTEMachine;
-import utils.RomanNumbers;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;

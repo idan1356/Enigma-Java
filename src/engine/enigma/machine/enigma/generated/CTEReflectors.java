@@ -6,7 +6,7 @@
 //
 
 
-package engine.enigma.generated;
+package engine.enigma.machine.enigma.generated;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,8 +26,8 @@ import javax.xml.bind.annotation.XmlType;
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
- *       &lt;sequence maxOccurs="unbounded">
- *         &lt;element ref="{}CTE-Rotor"/>
+ *       &lt;sequence maxOccurs="5">
+ *         &lt;element ref="{}CTE-Reflector"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -38,41 +38,41 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "cteRotor"
+    "cteReflector"
 })
-@XmlRootElement(name = "CTE-Rotors")
-public class CTERotors {
+@XmlRootElement(name = "CTE-Reflectors")
+public class CTEReflectors {
 
-    @XmlElement(name = "CTE-Rotor", required = true)
-    protected List<CTERotor> cteRotor;
+    @XmlElement(name = "CTE-Reflector", required = true)
+    protected List<CTEReflector> cteReflector;
 
     /**
-     * Gets the value of the cteRotor property.
+     * Gets the value of the cteReflector property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the cteRotor property.
+     * This is why there is not a <CODE>set</CODE> method for the cteReflector property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getCTERotor().add(newItem);
+     *    getCTEReflector().add(newItem);
      * </pre>
      * 
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link CTERotor }
+     * {@link CTEReflector }
      * 
      * 
      */
-    public List<CTERotor> getCTERotor() {
-        if (cteRotor == null) {
-            cteRotor = new ArrayList<CTERotor>();
+    public List<CTEReflector> getCTEReflector() {
+        if (cteReflector == null) {
+            cteReflector = new ArrayList<CTEReflector>();
         }
-        return this.cteRotor;
+        return this.cteReflector;
     }
 
 }

@@ -5,9 +5,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Rotors {
-    List<Rotor> rotorList = new LinkedList<>();
-
-    public Rotors(List<Rotor> rotors, List<Integer> rotorsChosen)
+    private final List<Rotor> rotorList = new LinkedList<>();
+    private final String startPosition;
+    public Rotors(List<Rotor> rotors, List<Integer> rotorsChosen,String startPosition)
     {
         //TODO: change code so no reverse needed
         Collections.reverse(rotorsChosen);

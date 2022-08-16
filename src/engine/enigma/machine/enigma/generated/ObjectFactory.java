@@ -6,7 +6,7 @@
 //
 
 
-package engine.enigma.generated;
+package engine.enigma.machine.enigma.generated;
 
 import javax.xml.bind.annotation.XmlRegistry;
 

@@ -1,6 +1,6 @@
 package menu;
 
-import engine.enigma.generated.CTEEnigma;
+import engine.enigma.machine.enigma.generated.CTEEnigma;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -12,7 +12,7 @@ import java.io.InputStream;
 
 public class Menu {
 
-    private final static String JAXB_XML_GAME_PACKAGE_NAME = "engine.enigma.generated";
+    private final static String JAXB_XML_GAME_PACKAGE_NAME = "engine.enigma.machine.enigma.generated";
 
     public static void main(String[] args) {
         try {

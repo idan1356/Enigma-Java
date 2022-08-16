@@ -1,12 +1,7 @@
 package engine.enigma.machine.enigma.components;
 
-import engine.enigma.generated.CTEReflector;
-import engine.enigma.generated.CTEReflectors;
-import engine.enigma.machine.enigma_settings.random.RandomSettings;
+import engine.enigma.machine.enigma.generated.CTEReflector;
 import utils.RomanNumbers;
-
-import java.util.*;
-import java.util.stream.Collectors;
 
 public class Reflector {
     private final int[] reflector;

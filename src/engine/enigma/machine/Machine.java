@@ -1,6 +1,7 @@
 package engine.enigma.machine;
 
-import engine.enigma.generated.*;
+import DTO.machine.DTOMachineSpecs;
+import engine.enigma.machine.enigma.generated.*;
 import engine.enigma.machine.enigma.Enigma;
 import engine.enigma.machine.enigma_settings.EnigmaSettings;
 import engine.enigma.machine.enigma_settings.random.RandomSettings;
@@ -14,10 +15,12 @@ import javax.xml.bind.Unmarshaller;
 import java.io.*;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Machine {
-    private final static String JAXB_XML_GAME_PACKAGE_NAME = "engine.enigma.generated";
+    private final static String JAXB_XML_GAME_PACKAGE_NAME = "engine.enigma.machine.enigma.generated";
     private final List<Reflector> reflectors;
     private final List<Rotor> rotors;
     private final int rotorsUsedCount;
@@ -32,6 +35,7 @@ public class Machine {
         rotors = copyRotors(enigma.getCTERotors());
         reflectors = copyReflectors(enigma.getCTEReflectors(), ABC);
         rotorsUsedCount = enigma.getRotorsCount();
+        enigmaList = new LinkedList<>();
     }
 
     private static CTEEnigma deserializeFrom (InputStream in) throws JAXBException {
@@ -56,10 +60,15 @@ public class Machine {
 
     public Enigma getRandom(){
         EnigmaSettings randomSettings = RandomSettings.randomSettings(rotors, reflectors, ABC, rotorsUsedCount);
-        return new Enigma(randomSettings,rotors, reflectors, ABC);
+        Enigma enigma = new Enigma(randomSettings,rotors, reflectors, ABC);
+        enigmaList.add(enigma);
+        return enigma;
     }
+
     public Enigma getEnigma(EnigmaSettings settings){
-        return new Enigma(settings, rotors, reflectors, ABC);
+        Enigma enigma = new Enigma(settings, rotors, reflectors, ABC);
+        enigmaList.add(enigma);
+        return enigma;
     }
 }
 

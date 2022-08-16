@@ -1,7 +1,7 @@
 package engine.enigma.machine.validators.file_validator.components_validator.reflectors_validator;
 
 import engine.enigma.machine.validators.Validator;
-import engine.enigma.generated.CTEReflector;
+import engine.enigma.machine.enigma.generated.CTEReflector;
 import utils.RomanNumbers;
 
 public class ReflectorValidator implements Validator {

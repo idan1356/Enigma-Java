@@ -7,13 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Rotor {
-    int notch;
-    int offset;
-    int ID;
-    List<String> left;
-    List<String> right;
-    Rotor next;
-    Rotor prev;
+    private final int notch;
+    private int offset;
+    private final int ID;
+    private final List<String> left;
+    private final List<String> right;
+    private Rotor next;
+    private Rotor prev;
 
     public Rotor(CTERotor rotor){
         notch = rotor.getNotch();

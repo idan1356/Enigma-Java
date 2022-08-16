@@ -1,8 +1,8 @@
 package engine.enigma.machine.validators.file_validator.components_validator.rotors_validator;
 
 import engine.enigma.machine.validators.Validator;
-import engine.enigma.generated.CTEMachine;
-import engine.enigma.generated.CTERotor;
+import engine.enigma.machine.enigma.generated.CTEMachine;
+import engine.enigma.machine.enigma.generated.CTERotor;
 
 import java.util.Comparator;
 import java.util.List;
