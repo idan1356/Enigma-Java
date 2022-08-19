@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Enigma EXC1.iml" filepath="$PROJECT_DIR$/Enigma EXC1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UI/UI.iml" filepath="$PROJECT_DIR$/UI/UI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/engine/engine.iml" filepath="$PROJECT_DIR$/engine/engine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/misc/misc.iml" filepath="$PROJECT_DIR$/misc/misc.iml" />
     </modules>
   </component>
 </project>
